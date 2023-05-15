@@ -13,12 +13,12 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_profile_up_card_view"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_marginBottom="16dp"
             android:layout_weight="1"
             app:cardCornerRadius="20sp"
@@ -30,15 +30,45 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/background_custom"
                 android:orientation="vertical">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profile_image"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/profile_default"
-                    app:civ_border_color="#FF000000"
-                    app:civ_border_width="2dp" />
+                    android:layout_marginLeft="7dp"
+                    android:orientation="horizontal"
+                    >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center"
+                        android:background=""
+
+                        android:src="@drawable/profile_default"
+                        app:civ_border_color="#FF000000"
+                        app:civ_border_width="2dp" />
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/camera"
+                        android:tint="@color/white"
+                        android:background=""
+                        android:layout_gravity="top"
+                    >
+
+                    </ImageButton>
+                </LinearLayout>
+<!--                <ImageButton-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background=""-->
+<!--                    android:src="@drawable/camera"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    >-->
+
+<!--                </ImageButton>-->
+
+
 
                 <LinearLayout
                     android:id="@+id/ll_profile_head_information"
@@ -59,7 +89,7 @@
 
                     </TextView>
 
-                    <TextView
+                    <EditText
                         android:id="@+id/profile_fullname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -70,7 +100,7 @@
                         android:textSize="@dimen/medium_text_size"
                         android:textStyle="bold">
 
-                    </TextView>
+                    </EditText>
 
                     <LinearLayout
                         android:id="@+id/ll_profile_location_and_join_date"
@@ -79,7 +109,7 @@
                         android:gravity="center"
                         android:orientation="horizontal">
 
-                        <TextView
+                        <EditText
                             android:id="@+id/profile_location"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -105,15 +135,16 @@
 
                 </LinearLayout>
 
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/profile_down_card_view"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="16dp"
-            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.7"
             app:cardCornerRadius="20sp">
 
             <LinearLayout
@@ -176,7 +207,7 @@
 
                     </TextView>
 
-                    <TextView
+                    <EditText
                         android:id="@+id/profile_phone_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -186,7 +217,7 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/small_text_size">
 
-                    </TextView>
+                    </EditText>
 
                 </LinearLayout>
 
@@ -204,37 +235,70 @@
                         android:textSize="@dimen/medium_text_size"
                         android:textStyle="bold" />
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10sp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:background="@drawable/chips"
+                            android:padding="7sp"
+                            android:text="Football">
+
+                        </TextView>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:background="@drawable/chips"
+                            android:padding="7sp"
+                            android:text="Basketball">
+
+                        </TextView>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10sp"
-                    android:orientation="horizontal">
+            </LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5sp"
-                        android:background="@drawable/chips"
-                        android:padding="7sp"
-                        android:text="Football">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="20dp">
 
-                    </TextView>
+                <Button
+                    android:id="@+id/edit_save_button"
+
+                    android:layout_width="60sp"
+                    android:layout_height="50sp"
+                    android:background="@drawable/button_background"
+
+                    android:text="Save"
+
+                    android:textColor="@color/white">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/edit_cancel_button"
+                    android:layout_width="70sp"
+                    android:layout_height="50sp"
+                    android:background="@drawable/cancel_button_background"
+                    android:text="Cancel"
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5sp"
-                        android:background="@drawable/chips"
-                        android:padding="7sp"
-                        android:text="Basketball">
+                    android:textColor="@color/white">
 
-                    </TextView>
 
-                </LinearLayout>
+                </Button>
             </LinearLayout>
 
 
